@@ -71,3 +71,40 @@ xxx():m_a(a), m_b(b)
 }
 ```
 
+[2.3 friend](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/2.3_friend.cpp)
+
+在 C++ 中，一个类中可以有 public、protected、private 三种属性的成员，通过对象可以访问 public 成员，只有本类中的函数可以访问本类的 private 成员。
+
+借助友元（friend），可以使得其他类中的成员函数以及全局范围内的函数访问当前类的 private 成员。
+
+在友元函数中不能直接访问类的成员，必须要借助对象
+
+- 友元的关系是单向的而不是双向的。如果声明了类 B 是类 A 的友元类，不等于类 A 是类 B 的友元类，类 A 中的成员函数不能访问类 B 中的 private 成员。
+- 友元的关系不能传递。如果类 B 是类 A 的友元类，类 C 是类 B 的友元类，不等于类 C 是类 A 的友元类。
+
+[2.4 string](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/2.4_string.cpp)
+
+字符串定义、输入输出、拼接、增删改查
+
+运行输出：
+
+```
+s1: c++
+s2: c++
+s3: 
+s4: hello world len: 11
+c str:c++
+h e l l o   w o r l d 
+s5: c++hello world	s6: c++A
+insert: hello c++world
+insert: hello abcde c++world
+erase: hello e c++world
+erase: hello
+s4: hello world
+pick: world
+find at index : 6
+find at index : 6
+Not found index: 4294967295
+find at index : 2
+
+```
