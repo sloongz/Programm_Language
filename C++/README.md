@@ -153,6 +153,48 @@ class D: public A, private B, protected C{
 ```
 [4.4 virtual inheritance](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/4.4_virtual_inheritance.cpp)
 
+
+```
+class A {
+protected:
+	int m_a;
+};
+
+class B: virtual public A {  //虚继承
+protected:
+	int m_b;
+};
+
+class C: virtual public A {  //虚继承
+protected:
+	int m_c;
+};
+
+//派生类D
+class D: public B, public C {
+}
+```
+
+
 为了解决多继承时的命名冲突和冗余数据问题，C++ 提出了虚继承，使得在派生类中只保留一份间接基类的成员。
 
 虚继承的目的是让某个类做出声明，承诺愿意共享它的基类。其中，这个被共享的基类就称为虚基类（Virtual Base Class），本例中的 A 就是一个虚基类。在这种机制下，不论虚基类在继承体系中出现了多少次，在派生类中都只包含一份虚基类的成员。
+
+[5.1 polymorphism virtual function]()
+
+面向对象程序设计语言有封装、继承和多态三种机制，这三种机制能够有效提高程序的可读性、可扩充性和可重用性。
+
+多态（polymorphism）”指的是同一名字的事物可以完成不同的功能。多态可以分为编译时的多态和运行时的多态。前者主要是指函数的重载（包括运算符的重载）、对重载函数的调用，在编译时就能根据实参确定应该调用哪个函数，因此叫编译时的多态；而后者则和继承、虚函数等概念有关，是本章要讲述的内容。本教程后面提及的多态都是指运行时的多态。
+
+- 虚函数（Virtual Function）
+
+```
+class a {
+public:
+    virtual void func(int);
+};
+```
+
+通过基类指针只能访问派生类的成员变量，但是不能访问派生类的成员函数。
+
+有了虚函数，基类指针指向基类对象时就使用基类的成员（包括成员函数和成员变量），指向派生类对象时就使用派生类的成员。换句话说，基类指针可以按照基类的方式来做事，也可以按照派生类的方式来做事，它有多种形态，或者说有多种表现方式，我们将这种现象称为多态（Polymorphism）。
