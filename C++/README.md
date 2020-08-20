@@ -142,3 +142,17 @@ public、protected、private 指定继承方式:
 [4.2 Inheritance constructor destructor](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/4.2_inheritance_c_d.cpp)
 
 类的构造函数不能被继承, 但是可以在派生类的构造函数中调用基类的构造函数。
+
+[4.3 multiple inheritance](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/4.3_multiple_inheritance.cpp)
+
+
+```
+class D: public A, private B, protected C{
+    //类D新增加的成员
+}
+```
+[4.4 virtual inheritance](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/4.4_virtual_inheritance.cpp)
+
+为了解决多继承时的命名冲突和冗余数据问题，C++ 提出了虚继承，使得在派生类中只保留一份间接基类的成员。
+
+虚继承的目的是让某个类做出声明，承诺愿意共享它的基类。其中，这个被共享的基类就称为虚基类（Virtual Base Class），本例中的 A 就是一个虚基类。在这种机制下，不论虚基类在继承体系中出现了多少次，在派生类中都只包含一份虚基类的成员。
