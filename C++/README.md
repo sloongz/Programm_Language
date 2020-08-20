@@ -108,3 +108,35 @@ Not found index: 4294967295
 find at index : 2
 
 ```
+[3.1 reference](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/3.1_reference.cpp)
+
+引用可以看做是数据的一个别名，通过这个别名和原来的名字都能够找到这份数据。
+
+[4.1 Inheritance]()
+
+继承的一般语法为：
+
+```
+class 派生类名:［继承方式］ 基类名{
+    派生类新增加的成员
+};
+```
+继承（Inheritance）可以理解为一个类从另一个类获取成员变量和成员函数的过程。例如类 B 继承于类 A，那么 B 就拥有 A 的成员变量和成员函数。
+
+在C++中，派生（Derive）和继承是一个概念，只是站的角度不同。继承是儿子接收父亲的产业，派生是父亲把产业传承给儿子。
+
+被继承的类称为父类或基类，继承的类称为子类或派生类。“子类”和“父类”通常放在一起称呼，“基类”和“派生类”通常放在一起称呼。
+
+派生类除了拥有基类的成员，还可以定义自己的新成员，以增强类的功能。
+
+public、protected、private 指定继承方式:
+继承方式/基类成员 | public成员 | protected成员 | private成员
+---|---|---|---
+**public继承** | 	public | protected | 不可见
+**protected继承** | protected | protected | 不可见
+**private继承**| private | private | 不可见
+
+
+如果派生类中的成员（包括成员变量和成员函数）和基类中的成员重名，那么就会遮蔽从基类继承过来的成员。
+
+
