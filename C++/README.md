@@ -112,7 +112,7 @@ find at index : 2
 
 引用可以看做是数据的一个别名，通过这个别名和原来的名字都能够找到这份数据。
 
-[4.1 Inheritance]()
+[4.1 Inheritance](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/4.1_inheritance.cpp)
 
 继承的一般语法为：
 
@@ -139,4 +139,6 @@ public、protected、private 指定继承方式:
 
 如果派生类中的成员（包括成员变量和成员函数）和基类中的成员重名，那么就会遮蔽从基类继承过来的成员。
 
+[4.2 Inheritance constructor destructor](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/4.2_inheritance_c_d.cpp)
 
+类的构造函数不能被继承, 但是可以在派生类的构造函数中调用基类的构造函数。
