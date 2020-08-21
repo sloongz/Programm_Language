@@ -4,9 +4,13 @@
 
 using namespace std;
 
+class Student {
+};
+
 void func()
 {
-	throw "unkown exception";
+	//throw "unkown exception";
+	throw Student();
 	cout<<"xxx"<<endl;
 }
 
@@ -26,6 +30,10 @@ int main()
 		cout<<"yyyy"<<endl;
 	} catch(const char * &e) {
 		cout<<e<<endl;
+	} catch(int &e) {
+		cout<<"int: "<<e<<endl;
+	} catch (Student &e) {
+		cout<<"Student"<<endl;
 	}
 
 	return 0;
