@@ -199,7 +199,7 @@ public:
 
 有了虚函数，基类指针指向基类对象时就使用基类的成员（包括成员函数和成员变量），指向派生类对象时就使用派生类的成员。换句话说，基类指针可以按照基类的方式来做事，也可以按照派生类的方式来做事，它有多种形态，或者说有多种表现方式，我们将这种现象称为多态（Polymorphism）。
 
-[5.2 pure virtual function]()
+[5.2 pure virtual function](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/5.2_pure_virtual_function.cpp)
 
 ```
 class A {
@@ -213,3 +213,26 @@ public:
 抽象类通常是作为基类，让派生类去实现纯虚函数。派生类必须实现纯虚函数才能被实例化。
 
 存虚函数是派生类必须实现抽象基类功能的霸王条款
+
+[6.1 operator](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/6.1_operator.cpp)
+
+```
+返回值类型 operator 运算符名称 (形参表列){
+    //TODO:
+}
+```
+运算符重载是通过函数实现的，它本质上是函数重载
+
+当执行c3 = c1 + c2;语句时，编译器检测到+号两边都是 对象，就会转换为类似下面的函数调用
+
+```
+c3 = operator+(c1, c2);
+```
+
+[7.1 template function](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/7.1_template_function.cpp)
+
+```
+template <typename 类型参数1 , typename 类型参数2 , ...> 返回值类型  函数名(形参列表){
+    //在函数体中可以使用类型参数
+}
+```
