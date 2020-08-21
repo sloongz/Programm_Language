@@ -231,8 +231,28 @@ c3 = operator+(c1, c2);
 
 [7.1 template function](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/7.1_template_function.cpp)
 
+类型的参数化
+
 ```
 template <typename 类型参数1 , typename 类型参数2 , ...> 返回值类型  函数名(形参列表){
     //在函数体中可以使用类型参数
 }
 ```
+
+[7.2 template class](https://github.com/sloongz/Programm_Language/blob/master/C%2B%2B/7.2_template_class.cpp)
+
+类模板的目的同样是将数据的类型参数化
+```
+template<typename 类型参数1 , typename 类型参数2 , …> class 类名{
+    //TODO:
+};
+```
+在类外定义成员函数时仍然需要带上模板头，格式为：
+
+```
+template<typename 类型参数1 , typename 类型参数2 , …>
+返回值类型 类名<类型参数1 , 类型参数2, ...>::函数名(形参列表){
+    //TODO:
+}
+```
+
