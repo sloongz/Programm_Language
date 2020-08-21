@@ -255,4 +255,19 @@ template<typename 类型参数1 , typename 类型参数2 , …>
     //TODO:
 }
 ```
+[8.1 exception]()
+
+```
+try{
+    // 可能抛出异常的语句
+}catch(exceptionType variable){
+    // 处理异常的语句
+}
+```
+throw 抛出异常
+
+```
+throw
+```
+抛出（Throw）--> 检测（Try） --> 捕获（Catch）
 
