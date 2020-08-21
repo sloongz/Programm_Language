@@ -28,7 +28,7 @@ Student::Student(int age, string name):People(age, name)
 
 void Student::say(string str)
 {
-	cout<<"student say"<<endl;
+	cout<<"student say:"<<endl;
 	cout<<"I am "<<m_name<<" "<<m_age<<" years old"<<endl;
 	cout<<str<<endl;
 }
@@ -45,7 +45,7 @@ Teacher::Teacher(int age, string name):People(age, name)
 
 void Teacher::say(string str)
 {
-	cout<<"teach say"<<endl;
+	cout<<"teach say:"<<endl;
 	cout<<"I am "<<m_name<<" "<<m_age<<" years old"<<endl;
 	cout<<str<<endl;
 }
