@@ -57,6 +57,20 @@ print "2>>1= 0x%x" %(2>>1)
 print "\n"
 
 
+#and or not
+if 1 and 0 :
+	print "1 and 0 true"
+else :
+	print "1 and 0 false"
+
+if 1 or 0 :
+	print "1 or 0 true"
+else :
+	print "1 or 0 false"
+
+print "not 1: %d" %(not 1)
+print "\n"
+
 #input
 num1=input("enter a number:");
 print "type:", type(num1)
