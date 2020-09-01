@@ -66,5 +66,4 @@ for i in range(len(list1)):
 			temp = list1[j]
 			list1[j] = list1[j+1]
 			list1[j+1] = temp
-	i = i+1;
 print list1
