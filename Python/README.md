@@ -204,7 +204,7 @@ setname = set(iteration)
 差集    	-	取一个集合中另一集合没有的元素
 对称差集	^	取集合 A 和 B 中不属于 A&B 的元素
 
-[2.1 string]()
+[2.1 string](https://github.com/sloongz/Programm_Language/blob/master/Python/2.1_string.py)
 
 **字符串拼接**
 ```
@@ -325,3 +325,84 @@ str.format(args)
 ```
 - str 用于指定字符串的显示样式
 - args 用于指定要进行格式转换的项，如果有多项，之间有逗号进行分割
+
+
+[3.1 if else](https://github.com/sloongz/Programm_Language/blob/master/Python/3.1_if_else.py)
+
+```
+if 表达式：
+    代码块
+```
+
+```
+if 表达式：
+    代码块 1
+else：
+    代码块 2
+```
+
+```
+if 表达式 1：
+    代码块 1
+elif 表达式 2：
+    代码块 2
+elif 表达式 3：
+    代码块 3
+...//其它elif语句
+else：
+    代码块 n
+```
+if、elif 和 else 后面的代码块一定要缩进，而且缩进量要大于 if、elif 和 else 本身。
+
+[3.2 pass assert](https://github.com/sloongz/Programm_Language/blob/master/Python/3.2_pass_assert.py)
+
+
+```
+pass
+```
+ 空语句，什么都不做。
+
+
+```
+assert 表达式
+```
+表达式为0 就报错
+
+[3.3 while for](https://github.com/sloongz/Programm_Language/blob/master/Python/3.3_while_for.py)
+
+```
+while 条件表达式：
+    代码块
+```
+
+```
+for 迭代变量 in 字符串|列表|元组|字典|集合：
+    代码块
+```
+
+无论是 while 循环还是 for 循环，其后都可以紧跟着一个 else 代码块，它的作用是当循环条件为 False 跳出循环时，程序会最先执行 else 代码块中的代码。
+
+
+```
+continue
+```
+
+```
+break
+```
+
+[3.4 sorted reversed zip](https://github.com/sloongz/Programm_Language/blob/master/Python/3.4_sorted_reversed_zip.py)
+
+排序
+
+```
+list = sorted(iterable, key=None, reverse=False)  
+```
+其中，iterable 表示指定的序列，key 参数可以自定义排序规则；reverse 参数指定以升序（False，默认）还是降序（True）进行排序。sorted() 函数会返回一个排好序的列表。
+
+逆序
+
+```
+reversed(seq)
+```
+其中，seq 可以是列表，元素，字符串以及 range() 生成的区间列表。
