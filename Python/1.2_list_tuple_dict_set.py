@@ -75,4 +75,30 @@ print dict1
 print "key one vaule ",dict1["one"]
 print dict1.get("one")
 print dict1.get("five","not appear")
-del dict1
+
+dict1["five"]=5
+print dict1
+dict1["one"]="first"
+print dict1
+del dict1["five"]
+print dict1
+print "keys:",dict1.keys()
+print "values:",dict1.values()
+print "items:",dict1.items()
+
+#set
+print "\n================set================"
+set1= {1,2,3,'a','d'}
+print set1
+set1=set([1,2,3,4,5])
+print set1
+set1.add(8)
+set1.add((7,8))
+print set1
+set1.remove(1)
+print set1
+set2 = {1,2,3}
+print set1&set2
+print set1|set2
+print set1-set2
+print set1^set2
