@@ -22,6 +22,9 @@ $ python xxx.py
 
 [1.2 list tuple dict set](https://github.com/sloongz/Programm_Language/blob/master/Python/1.2_list_tuple_dict_set.py)
 
+
+**list**
+
 使用 [ ] 直接创建列表，
 使用[ ]创建列表后，一般使用=将它赋值给某个变量
 ```
@@ -77,6 +80,8 @@ count() 方法用来统计某个元素在列表中出现的次数
 listname.count(obj)
 ```
 
+**tuple**
+
 元组（tuple）是 Python 中另一个重要的序列结构，和列表类似，元组也是由一系列按特定顺序排序的元素组成。
 元组和列表（list）的不同之处在于：
 - 列表的元素是可以更改的，包括修改元素值，删除和插入元素，所以列表是可变序列；
@@ -99,7 +104,7 @@ tuplename[i]
 tuplename[start : end : step]
 ```
 
-字典（dict）
+**dict**
 
 字典（dict）是一种无序的、可变的序列，它的元素以“键值对（key-value）”的形式存储。相对地，列表（list）和元组（tuple）都是有序的序列，它们的元素在底层是挨着存放的。
 
@@ -157,3 +162,44 @@ dictname 表示字典变量的名字；key 表示指定的键；default 用于�
 ```
 dictname[key] = value
 ```
+
+删除
+
+```
+del dictname[key]
+```
+keys()、values() 和 items() 方法
+- keys() 方法用于返回字典中的所有键（key）；
+- values() 方法用于返回字典中所有键对应的值（value）；
+- items() 用于返回字典中所有的键值对（key-value）。
+
+
+copy() 方法返回一个字典的拷贝，也即返回一个具有相同键值对的新字典。
+
+update() 方法可以使用一个字典所包含的键值对来更新己有的字典。
+
+update() 方法可以使用一个字典所包含的键值对来更新己有的字典。在执行 update() 方法时，如果被更新的字典中己包含对应的键值对，那么原 value 会被覆盖；如果被更新的字典中不包含对应的键值对，则该键值对被添加进去。
+
+setdefault() 方法用来返回某个 key 对应的 value。
+
+```
+dictname.setdefault(key, defaultvalue)
+```
+setdefault() 方法总能返回指定 key 对应的 value：
+- 如果该 key 存在，那么直接返回该 key 对应的 value；
+- 如果该 key 不存在，那么先为该 key 设置默认的 defaultvalue，然后再返回该 key 对应的 defaultvalue。
+
+
+**set**
+
+Python 中的集合，和数学中的集合概念一样，用来保存不重复的元素，即集合中的元素都是唯一的，互不相同。
+
+
+```
+setname = {element1,element2,...,elementn}
+setname = set(iteration)
+```
+交集	    &	取两集合公共的元素
+并集    	|	取两集合全部的元素
+差集    	-	取一个集合中另一集合没有的元素
+对称差集	^	取集合 A 和 B 中不属于 A&B 的元素
