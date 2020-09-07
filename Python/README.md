@@ -1,3 +1,5 @@
+Python [教程](http://c.biancheng.net/python/)
+
 [1.1 basic operation](https://github.com/sloongz/Programm_Language/blob/master/Python/1.1_basic_operation.py)
 
 如何运行
@@ -463,3 +465,275 @@ def outdef():
 **闭包**
 
 闭包，又称闭包函数或者闭合函数，其实和前面讲的嵌套函数类似，不同之处在于，闭包中外部函数返回的不是一个具体的值，而是一个函数。一般情况下，返回的函数会赋值给一个变量，这个变量可以在后面被继续执行调用。
+
+[4.2 lambda_eval_exec](https://github.com/sloongz/Programm_Language/blob/master/Python/4.2_lambda_eval_exec.py)
+
+**lambda**
+```
+name = lambda [list] : 表达式
+```
+常用来表示内部仅包含 1 行表达式的函数。如果一个函数的函数体仅有 1 行表达式，则该函数就可以用 lambda 表达式来代替。
+
+定义 lambda 表达式，必须使用 lambda 关键字；[list] 作为可选参数，等同于定义函数是指定的参数列表；value 为该表达式的名称。
+
+**eval()和exec()**
+
+eval() 执行完会返回结果，而 exec() 执行完不返回结果
+```
+eval(source, globals=None, locals=None, /)
+```
+
+```
+exec(source, globals=None, locals=None, /)
+```
+二者的语法格式除了函数名，其他都相同，其中各个参数的具体含义如下:
+- expression：这个参数是一个字符串，代表要执行的语句 。该语句受后面两个字典类型参数 globals 和 locals 的限制，只有在 globals 字典和 locals 字典作用域内的函数和变量才能被执行。
+- globals：这个参数管控的是一个全局的命名空间，即 expression 可以使用全局命名空间中的函数。如果只是提供了 globals 参数，而没有提供自定义的 __builtins__，则系统会将当前环境中的 __builtins__ 复制到自己提供的 globals 中，然后才会进行计算；如果连 globals 这个参数都没有被提供，则使用 Python 的全局命名空间。
+- locals：这个参数管控的是一个局部的命名空间，和 globals 类似，当它和 globals 中有重复或冲突时，以 locals 的为准。如果 locals 没有被提供，则默认为 globals。
+
+[5.1 class]()
+
+**定义类**
+
+```
+class 类名：
+    多个（≥0）类属性...
+    多个（≥0）类方法...
+```
+**构造函数**
+
+```
+def __init__(self,...):
+    代码块
+```
+**类对象访问变量或方法**
+
+```
+类对象名.变量名
+```
+
+```
+对象名.方法名(参数)
+```
+**给类对象动态添加/删除变量**
+```
+类对象名.变量名
+```
+```
+del 类对象名.变量名
+```
+
+**self**
+
+无论是构造方法还是实例方法，最少要包含一个参数，并没有规定该参数的具体名称。之所以将其命名为 self，只是程序员之间约定俗成的一种习惯，遵守这个约定，可以使我们编写的代码具有更好的可读性
+
+ Python 类方法中的 self 参数就相当于 C++ 中的 this 指针。
+ 
+ 
+**类属性和实例属性**
+- 类体中、所有函数之外：此范围定义的变量，称为类属性或类变量；
+- 类体中，所有函数内部：以“self.变量名”的方式定义的变量，称为实例属性或实例变量；
+- 类体中，所有函数内部：以“变量名=变量值”的方式定义的变量，称为局部变量。
+
+**类方法**
+
+类方法:
+```
+class xxx:
+    #定义了一个类方法
+    @classmethod
+    def info(cls):
+        ...
+```
+
+类静态方法
+```
+class xxx:
+    @staticmethod
+    def info(...):
+        ...
+```
+静态方法没有类似 self、cls 这样的特殊参数，因此 Python 解释器不会对它包含的参数做任何类或对象的绑定。也正因为如此，类的静态方法中无法调用任何类属性和类方法。
+
+ Python 实例方法、类方法、静态方法的[区别与作用](https://www.cnblogs.com/wcwnina/p/8644892.html)：
+ [code](https://github.com/sloongz/Programm_Language/blob/master/Python/5.2_class.py)
+ 
+-  实例方法
+ 
+```
+定义：第一个参数必须是实例对象，该参数名一般约定为“self”，通过它来传递实例的属性和方法（也可以传类的属性和方法）；
+
+调用：只能由实例对象调用。
+```
+实例方法就是类的实例能够使用的方法。这里不做过多解释。
+
+
+- 类方法
+
+```
+定义：使用装饰器@classmethod。第一个参数必须是当前类对象，该参数名一般约定为“cls”，通过它来传递类的属性和方法（不能传实例的属性和方法）；
+
+调用：类对象或实例对象都可以调用。
+```
+使用装饰器@classmethod。
+
+原则上，类方法是将类本身作为对象进行操作的方法。假设有个方法，且这个方法在逻辑上采用类本身作为对象来调用更合理，那么这个方法就可以定义为类方法。另外，如果需要继承，也可以定义为类方法。
+
+
+- 静态方法
+
+```
+定义：使用装饰器@staticmethod。参数随意，没有“self”和“cls”参数，但是方法体中不能使用类或实例的任何属性和方法；
+
+调用：类对象或实例对象都可以调用。
+```
+使用装饰器@staticmethod。
+
+静态方法是类中的函数，不需要实例。静态方法主要是用来存放逻辑性的代码，逻辑上属于类，但是和类本身没有关系，也就是说在静态方法中，不会涉及到类中的属性和方法的操作。可以理解为，静态方法是个独立的、单纯的函数，它仅仅托管于某个类的名称空间中，便于使用和维护。
+
+[5.3 package inheritance](https://github.com/sloongz/Programm_Language/blob/master/Python/5.3_package_inheritance.py)
+
+**封装**
+
+但是，Python 并没有提供 public、private 这些修饰符。为了实现类的封装，Python 采取了下面的方法：
+
+```
+默认情况下，Python 类中的变量和方法都是公有（public）的，它们的名称前都没有下划线（_）；
+
+如果类中的变量和函数，其名称以双下划线“__”开头，则该变量（函数）为私有变量（私有函数），其属性等同于 private。
+```
+除此之外，还可以定义以单下划线“_”开头的类属性或者类方法（例如 _name、_display(self)），这种类属性和类方法通常被视为私有属性和私有方法，虽然它们也能通过类对象正常访问，但这是一种约定俗称的用法。
+
+简单的例子
+
+```
+class Student:
+    def __init__(self, name):
+        self.__name = name
+    def get_name(self):
+        return self.__name
+    def set_name(self, name):
+        self.__name = name
+
+a = Student('lilei')
+print a.get_name()
+a.set_name('xiaoming')
+print a.get_name()
+
+```
+升级版
+
+```
+class StudentX:
+    @property
+    def name(self):
+         return self.__name
+    @name.setter
+    def name(self, name):
+      self.__name = name
+
+b = StudentX()
+b.name = "meimei"
+print b.name
+```
+装饰器（decorator）
+
+内置的@property装饰器就是负责把一个方法变成属性调用的，
+@name.setter，负责把一个setter方法变成属性赋值
+
+
+**继承**
+
+```
+class 类名(父类1, 父类2, ...)：
+    #类定义部分
+```
+子类继承父类时，只需在定义子类时，将父类（可以是多个）放在子类之后的圆括号里即可
+
+
+supper
+
+使用 super() 函数。但如果涉及多继承，该函数只能调用第一个直接父类的构造方法。
+
+```
+#python2:
+super(Class, obj).__init__(self,...)
+#python3:
+super().__init__(self,...)
+```
+
+
+**限制类实例动态添加属性和方法**
+ 
+
+为单个实例对象添加方法，不会影响该类的其它实例对象；而如果为类动态地添加方法，则所有的实例对象都可以使用。
+
+__slots__ 只能限制为实例对象动态添加属性和方法，而无法限制动态地为类添加属性和方法。
+
+__slots__ 属性值其实就是一个元组，只有其中指定的元素，才可以作为动态添加的属性或者方法的名称。举个例子：
+
+```
+class CLanguage:
+    __slots__ = ('name','add','info')
+```
+CLanguage 类中指定了 __slots__ 属性，这意味着，该类的实例对象仅限于动态添加 name、add、info 这 3 个属性以及 name()、add() 和 info() 这 3 个方法。
+
+
+
+[6.1 exception](https://github.com/sloongz/Programm_Language/blob/master/Python/6.1_exception.py)
+
+
+```
+AssertionError      当 assert 关键字后的条件为假时，程序运行会停止并抛出 AssertionError 异常
+AttributeError      当试图访问的对象属性不存在时抛出的异常
+IndexError          索引超出序列范围会引发此异常
+KeyError            字典中查找一个不存在的关键字时引发此异常
+NameError           不同类型数据之间的无效操作
+ZeroDivisionError   除法运算中除数为 0 引发此异常
+```
+
+
+
+Python 异常处理机制会涉及 try、except、else、finally 这 4 个关键字，同时还提供了可主动使程序引发异常的 raise 语句
+```
+try:
+    可能产生异常的代码块
+except [ (Error1, Error2, ... ) [as e] ]:
+    处理异常的代码块1
+except [ (Error3, Error4, ... ) [as e] ]:
+    处理异常的代码块2
+except  [Exception]:
+    处理其它异常
+```
+- (Error1, Error2,...) 、(Error3, Error4,...)：其中，Error1、Error2、Error3 和 Error4 都是具体的异常类型。显然，一个 except 块可以同时处理多种异常。
+- [as e]：作为可选参数，表示给异常类型起一个别名 e，这样做的好处是方便在 except 块中调用异常类型（后续会用到）。
+- [Exception]：作为可选参数，可以代指程序可能发生的所有异常情况，其通常用在最后一个 except 块。
+
+
+```
+try:
+    1/0
+except Exception as e:
+    # 访问异常的错误编号和详细信息
+    print(e.args)
+    print(str(e))
+    print(repr(e))
+```
+每种异常类型都提供了如下几个属性和方法，通过调用它们，就可以获取当前处理异常类型的相关信息:
+
+- args：返回异常的错误编号和描述字符串；
+- str(e)：返回异常信息，但不包括异常信息的类型；
+- repr(e)：返回较全的异常信息，包括异常信息的类型。
+
+异常处理机制还提供了一个 else 块，也就是原有 try except 语句的基础上再添加一个 else 块，即try except else结构.
+
+异常处理机制还提供了一个 finally 语句，通常用来为 try 块中的程序做扫尾清理工作。finally 语句的功能是：无论 try 块是否发生异常，最终都要进入 finally 语句，并执行其中的代码块。
+
+
+**raise 语句**
+```
+raise [exceptionName [(reason)]]
+```
+- raise：单独一个 raise。该语句引发当前上下文中捕获的异常（比如在 except 块中），或默认引发 RuntimeError 异常。
+- raise 异常类名称：raise 后带一个异常类名称，表示引发执行类型的异常。
+- raise 异常类名称(描述信息)：在引发指定类型的异常的同时，附带异常的描述信息。
