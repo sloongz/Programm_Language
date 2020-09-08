@@ -1,0 +1,7 @@
+write a line
+write a line
+write a line
+write a line
+write a line
+
+python
