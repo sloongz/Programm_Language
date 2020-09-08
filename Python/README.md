@@ -782,3 +782,40 @@ import xxpackagexxx.xxxmodulexxx
 from xxxpackagexxx import xxxmodulexxx
 ```
 如果用别名就再加as xxxmxxx
+
+
+[8.1 file](https://github.com/sloongz/Programm_Language/blob/master/Python/8.1_file.py)
+
+**路径**
+- os.getcwd() 获取当前路径。
+- 调用 os.path.abspath(path) 将返回 path 参数的绝对路径的字符串，这是将相对路径转换为绝对路径的简便方法。
+- 调用 os.path.isabs(path)，如果参数是一个绝对路径，就返回 True，如果参数是一个相对路径，就返回 False。
+- 调用 os.path.relpath(path, start) 将返回从 start 路径到 path 的相对路径的字符串。如果没有提供 start，就使用当前工作目录作为开始路径。
+- 调用 os.path.dirname(path) 将返回一个字符串，它包含 path 参数中最后一个斜杠之前的所有内容；调用 os.path.basename(path) 将返回一个字符串，它包含 path 参数中最后一个斜杠之后的所有内容.
+
+**文件**
+- 删除、修改权限：作用于文件本身，属于系统级操作。
+- 写入、读取：是文件最常用的操作，作用于文件的内容，属于应用级操作。
+
+文件的应用级操作可以分为以下 3 步，每一步都需要借助对应的函数实现：
+- 打开文件：使用 open() 函数，该函数会返回一个文件对象；
+- 对已打开文件做读/写操作：读取文件内容可使用 read()、readline() 以及 readlines() 函数；向文件中写入内容，可以使用 write() 函数。
+- 关闭文件：完成对文件的读/写操作之后，最后需要关闭文件，可以使用 close() 函数。
+
+
+open
+```
+file = open(file_name [, mode='r' [ , buffering=-1 [ , encoding = None ]]])
+```
+
+tell() 函数用于判断文件指针当前所处的位置
+
+seek() 函数用于移动文件指针到文件的指定位置
+
+文管理器
+
+```
+with 表达式 [as target]：
+    代码块
+```
+它能够帮助我们自动分配并且释放资源。
