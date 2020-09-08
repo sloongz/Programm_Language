@@ -739,7 +739,7 @@ raise [exceptionName [(reason)]]
 - raise 异常类名称(描述信息)：在引发指定类型的异常的同时，附带异常的描述信息。
 
 
-[7.1 module]()
+[7.1 module](https://github.com/sloongz/Programm_Language/blob/master/Python/7.1_module.py)
 
 ```
 import 模块名1 [as 别名1], 模块名2 [as 别名2]，…
@@ -757,3 +757,28 @@ from 模块名 import 成员名1 [as 别名1]，成员名2 [as 别名2]，…
 - 在当前目录，即当前执行的程序文件所在目录下查找；
 - 到 PYTHONPATH（环境变量）下的每个目录中查找；
 - 到 Python 默认的安装目录下查找。
+
+临时添加完整路径
+
+```
+import sys
+sys.path.append('D:\\python_module')
+```
+
+[7.2 package 打包](https://github.com/sloongz/Programm_Language/blob/master/Python/7.2_package.py)
+
+建立文件夹， 文件夹中建立文件__init__.py，
+此文件中可以不编写任何代码， 只写简单的注释打印等。
+
+在文件夹下可以写吗模块代码
+
+导入就使用
+```
+import xxpackagexxx.xxxmodulexxx
+```
+也可以
+
+```
+from xxxpackagexxx import xxxmodulexxx
+```
+如果用别名就再加as xxxmxxx
